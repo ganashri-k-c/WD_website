@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Garden - Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Resources for Growing Young Minds</h2>
+
+        <p>Explore these resources to deepen your understanding of sustainable agriculture, healthy eating habits, and the wonders of the natural world. We've compiled a list of books, websites, and videos suitable for children of all ages, and for curious adults as well!</p>
+
+        <h3>Recommended Books:</h3>
+        <ul>
+            <li><a href="https://www.gutenberg.org/cache/epub/113/pg113-images.html">The Secret Garden by Frances Hodgson Burnett</a> (Classic children's story about the magic of nature and gardening)</li>
+            <li><a href="https://youtu.be/HbeXoNFk8BQ">How a Seed Grows by Helene J. Jordan (VIDEO)</a> (Simple and engaging explanation of the plant life cycle)</li>
+            <li><a href="https://youtu.be/FLZVQFhFeqE">We Are Water Protectors by Carole Lindstrom (VIDEO)</a> (Beautiful story about protecting water resources and the environment)</li>
+        </ul>
+
+        <h3>Educational Websites:</h3>
+        <ul>
+            <li><a href="https://www.kidsgardening.org/">KidsGardening.org</a> (Website with interactive activities, gardening tips, and kid-friendly recipes)</li>
+            <li><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/kids/?cid=nrcs143_021857">Natural Resources Conservation Service: Soil for Kids</a> (Fun and informative website about soil science and its importance)</li>
+            <li><a href="https://healthbeet.org/engaging-nutrition-activities-and-games-for-kids/">Nutrition Activities and Games</a> (Engaging website with games and activities about healthy eating)</li>
+        </ul>
+
+        <h3>Inspiring Videos:</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=HODN4AtyWeQ">"The Pollinators" by National Geographic [YouTube]</a> (Documentary exploring the importance of pollinators and their role in food production)</li>
+            <li><a href="https://www.youtube.com/watch?v=PlCTLAhfPzM">"How to Grow Your Own Herbs" by Gardening Know How [YouTube]</a> (Simple and practical video guide on growing herbs at home)</li>
+            <li><a href="https://www.youtube.com/watch?v=9zvFresyPmA">"Composting 101" by Pure Living for Life [YouTube]</a> (Informative video explaining the benefits and process of composting)</li>
+        </ul>
+
+        <h3>Community Resources:</h3>
+        <p>Get involved and connect with your local community through these resources:</p>
+        <ul>
+            <li><a href="https://bhoomigardencentre.com/">Bhoomi Garden Centre</a> (A community garden in Bengaluru. Learn how to get involved!)</li>
+            <li><a href="https://bhoomi.farm/">Bhoomi Farm</a> (Support local farmers and enjoy fresh, seasonal produce in Bengaluru).</li>
+            <li><a href="https://sunshinesnest.com/landscape-gardening-workshops-in-bangalore/">Participate in workshops and learn new gardening skills</a></li>
+        </ul>
+
+        <h3>Curriculum Resources (For Educators):</h3>
+        <p>Looking for educational materials? Download these free resources:</p>
+        <ul>
+            <li><a href="https://www.scribd.com/document/74966990/Lesson-Plan-Germination-of-Seeds">Sample Lesson Plan: Seed Germination [PDF]</a></li>
+            <li><a href="https://aggie-horticulture.tamu.edu/wp-content/uploads/2013/06/compostingforkids.pdf">Composting for Kids Activity Guide [PDF]</a> (Engaging activities to teach children about composting)</li>
+            <li><a href="https://www.pollinator.org/learning-center/education#bb">The Pollinator Partnership Education Resources</a> (Website with lesson plans, activities, and resources about pollinators)</li>
+        </ul>
+
+        <h3>Volunteer Opportunities (Give Back to the Garden!):</h3>
+        <p>We rely on the support of our amazing volunteers to help the Interactive Learning Garden thrive. If you're passionate about gardening, education, or simply enjoy giving back to the community, we'd love to have you join our team! Here are some ways you can get involved:</p>
+        <ul>
+            <li>Help maintain the garden beds and plant new seeds</li>
+            <li>Assist with educational programs and activities for children</li>
+            <li>Organize fundraising events or community workshops</li>
+            <li>Share your gardening expertise with others</li>
+        </ul>
+        <p>To learn more about volunteer opportunities, please contact us at [your email address] or visit our volunteer signup page [link to volunteer signup page (if applicable)]</p>
+
+        <h3>Share Your Resources!</h3>
+        <p>Do you have a favorite book, website, or video related to gardening, healthy eating, or environmental education? Share it with others! Fill out the form below to submit your resource recommendation.</p>
+        <form id="resource-form">
+            <label for="resource-title">Resource Title:</label>
+            <input type="text" id="resource-title" name="resource-title" required>
+            <br>
+            <label for="resource-description">Description:</label>
+            <textarea id="resource-description" name="resource-description" rows="5" required></textarea>
+            <br>
+            <label for="resource-link">Link (Optional):</label>
+            <input type="url" id="resource-link" name="resource-link">
+            <br>
+            <button type="submit">Submit Resource</button>
+        </form>
+        <p>(Submitted resources will be reviewed before being added to the website.)</p>
+
+        <script>
+            const form = document.getElementById('resource-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const title = document.getElementById('resource-title').value;
+                const description = document.getElementById('resource-description').value;
+                const link = document.getElementById('resource-link').value;
+
+                // Validate form data
+                if (title === '' || description === '') {
+                    alert('Please fill in all required fields!');
+                    return;
+                }
+
+                // Send data to server (e.g., using XMLHttpRequest or Fetch API)
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'submit-resource.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                const formData = `title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&link=${encodeURIComponent(link)}`;
+                xhr.send(formData);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        alert('Resource submitted successfully!');
+                        form.reset();
+                    } else {
+                        alert('Error submitting resource: ' + xhr.statusText);
+                    }
+                };
+            });
+        </script>
+
+        <h3>Rate the Resources!</h3>
+        <p>Help others find the most valuable resources by leaving a rating. Click on the stars to rate a resource.</p>
+        <ul>
+            <li>
+                <a href="#">The Secret Garden by Frances Hodgson Burnett</a> (Classic children's story about the magic of nature and gardening)
+                <span class="rating">
+                    <input type="radio" name="rating" id="star-1">
+                    <label for="star-1">★</label>
+                    <input type="radio" name="rating" id="star-2">
+                    <label for="star-2">★</label>
+                    <input type="radio" name="rating" id="star-3">
+                    <label for="star-3">★</label>
+                    <input type="radio" name="rating" id="star-4">
+                    <label for="star-4">★</label>
+                    <input type="radio" name="rating" id="star-5">
+                    <label for="star-5">★</label>
+                </span>
+            </li>
+        </ul>
+        <style
